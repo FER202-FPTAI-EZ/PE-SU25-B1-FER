@@ -1,5 +1,6 @@
 import { Col, Row } from "react-bootstrap";
 import Left from "../Left";
+import Right from "../Right";
 
 function HomePage() {
   return (
@@ -16,10 +17,12 @@ function HomePage() {
         Products Review System
       </h1>
       <Row>
-        <Col sm={7}>
+        <Col sm={8}>
           <Left />
         </Col>
-        <Col sm={5}></Col>
+        <Col sm={4}>
+          <Right />
+        </Col>
       </Row>
     </div>
   );

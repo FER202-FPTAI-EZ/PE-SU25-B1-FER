@@ -8,7 +8,7 @@ const calculateAverageRate = (reviews) => {
 };
 
 const Left = () => {
-  const { products } = useAppContext();
+  const { products, setProductDetail } = useAppContext();
   const [chosenCategory, setChosenCategory] = useState("all");
 
   if (!products) return;
@@ -16,6 +16,10 @@ const Left = () => {
   const filteredProducts = products.filter(
     (product) => chosenCategory === "all" || product.category === chosenCategory
   );
+
+  const handleChoseProduct = (product) => {
+    setProductDetail(product);
+  };
 
   return (
     <div>
@@ -58,7 +62,9 @@ const Left = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Button>Add New Review</Button>
+                  <Button onClick={() => handleChoseProduct(product)}>
+                    Add New Review
+                  </Button>
                 </div>
               </Card.Body>
             </Card>

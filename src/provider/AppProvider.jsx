@@ -5,6 +5,7 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
+  const [productDetail, setProductDetail] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -19,6 +20,8 @@ const AppProvider = ({ children }) => {
       value={{
         products,
         setProducts,
+        productDetail,
+        setProductDetail,
       }}
     >
       {children}
