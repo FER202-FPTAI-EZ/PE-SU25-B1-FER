@@ -1,7 +1,4 @@
 import { Col, Row } from "react-bootstrap";
-import Left from "../Left";
-import Right from "../Right";
-
 function HomePage() {
   return (
     <div
@@ -17,12 +14,8 @@ function HomePage() {
         Products Review System
       </h1>
       <Row>
-        <Col sm={8}>
-          <Left />
-        </Col>
-        <Col sm={4}>
-          <Right />
-        </Col>
+        <Col sm={8}></Col>
+        <Col sm={4}></Col>
       </Row>
     </div>
   );

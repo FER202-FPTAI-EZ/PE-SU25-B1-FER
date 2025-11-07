@@ -1,18 +1,17 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AppProvider from "./provider/AppProvider";
 import HomePage from "./components/pages/HomePage";
-import ProductReviews from "./components/pages/ProductReviews";
+import MovieList from "./components/pages/MovieList";
+import BookTicket from "./components/pages/BookTicket";
 
 function App() {
   return (
-    <AppProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/reviews" element={<ProductReviews />} />
-        </Routes>
-      </BrowserRouter>
-    </AppProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route index path="/movies-showtimes" element={<MovieList />} />
+        <Route index path="/booking" element={<BookTicket />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,274 +1,369 @@
 {
-  "products": [
+  "users": [
     {
-      "id": "1",
-      "title": "Essence Mascara Lash",
-      "category": "beauty",
-      "price": 9.99,
-      "reviews": [
+      "id": "60c72b2f9b1e8a1b4c8a1234",
+      "username": "john_doe",
+      "email": "john@example.com"
+    },
+    {
+      "id": "60c72b2f9b1e8a1b4c8a1235",
+      "username": "jane_smith",
+      "email": "jane@example.com"
+    }
+  ],
+  "movies": [
+    {
+      "id": "60c72b2f9b1e8a1b4c8a2234",
+      "title": "The Matrix",
+      "genre": [
+        "Action",
+        "Sci-Fi"
+      ],
+      "duration": 136,
+      "details": {
+        "director": "Wachowski Sisters",
+        "releaseDate": "1999-03-31T00:00:00.000Z",
+        "rating": {
+          "score": 8.7,
+          "source": "IMDb"
+        }
+      }
+    },
+    {
+      "id": "60c72b2f9b1e8a1b4c8a2235",
+      "title": "Inception",
+      "genre": [
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "duration": 148,
+      "details": {
+        "director": "Christopher Nolan",
+        "releaseDate": "2010-07-16T00:00:00.000Z",
+        "rating": {
+          "score": 8.8,
+          "source": "IMDb"
+        }
+      }
+    },
+    {
+      "id": "60c72b2f9b1e8a1b4c8a2236",
+      "title": "The Godfather",
+      "genre": [
+        "Crime"
+      ],
+      "duration": 180,
+      "details": {
+        "director": "Francis Ford Coppola",
+        "releaseDate": "2000-07-15T00:00:00.000Z",
+        "rating": {
+          "score": 8.5,
+          "source": "IMDb"
+        }
+      }
+    }
+  ],
+  "theaters": [
+    {
+      "id": "60c72b2f9b1e8a1b4c8a3234",
+      "name": "CGV Vincom",
+      "location": {
+        "address": "70 Tran Hung Dao",
+        "city": "Ho Chi Minh",
+        "coordinates": {
+          "lat": 10.7769,
+          "lng": 106.7009
+        }
+      },
+      "showtimes": [
+        "60c72b2f9b1e8a1b4c8a4234",
+        "60c72b2f9b1e8a1b4c8a4235",
+        "60c72b2f9b1e8a1b4c8a4236",
+        "60c72b2f9b1e8a1b4c8a4237"
+      ]
+    },
+    {
+      "id": "60c72b2f9b1e8a1b4c8a3235",
+      "name": "Lotte Cinema",
+      "location": {
+        "address": "123 Le Loi",
+        "city": "Ho Chi Minh",
+        "coordinates": {
+          "lat": 10.7731,
+          "lng": 106.698
+        }
+      },
+      "showtimes": [
+        "60c72b2f9b1e8a1b4c8a4238",
+        "60c72b2f9b1e8a1b4c8a4239"
+      ]
+    }
+  ],
+  "showtimes": [
+    {
+      "id": "60c72b2f9b1e8a1b4c8a4234",
+      "movieId": "60c72b2f9b1e8a1b4c8a2234",
+      "theaterId": "60c72b2f9b1e8a1b4c8a3234",
+      "startTime": "2025-08-06T19:00:00.000Z",
+      "room": "Room 1",
+      "seats": [
         {
-          "rating": 2,
-          "comment": "Very unhappy with my purchase!",
-          "date": "2024-05-23T01:56:21.618Z",
-          "reviewerName": "John Doe"
+          "seatNumber": "A1",
+          "status": "booked",
+          "position": {
+            "row": "A",
+            "column": 1
+          }
         },
         {
-          "rating": 2,
-          "comment": "Not as described!",
-          "date": "2024-05-24T02:56:21.618Z",
-          "reviewerName": "Nolan Gonzalez"
-        },
-        {
-          "rating": 5,
-          "comment": "Very satisfied!",
-          "date": "2024-05-26T02:58:21.618Z",
-          "reviewerName": "Scarlett Wright"
-        },
-        {
-          "reviewerName": "ABC",
-          "comment": "1234",
-          "rating": 5,
-          "date": "2025-07-10T14:43:59.841Z"
-        },
-        {
-          "reviewerName": "HJKL",
-          "comment": "123455",
-          "rating": 5,
-          "date": "2025-07-10T14:44:13.697Z"
-        },
-        {
-          "reviewerName": "asdasd",
-          "comment": "asdasd",
-          "rating": 5,
-          "date": "2025-07-10T14:51:03.469Z"
+          "seatNumber": "A2",
+          "status": "booked",
+          "position": {
+            "row": "A",
+            "column": 2
+          }
         }
       ]
     },
     {
-      "id": "2",
-      "title": "Eyeshadow Palette with",
-      "category": "beauty",
-      "price": 19.99,
-      "reviews": [
+      "id": "60c72b2f9b1e8a1b4c8a4235",
+      "movieId": "60c72b2f9b1e8a1b4c8a2235",
+      "theaterId": "60c72b2f9b1e8a1b4c8a3234",
+      "startTime": "2025-08-06T21:00:00.000Z",
+      "room": "Room 2",
+      "seats": [
         {
-          "rating": 4,
-          "comment": "Very satisfied!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Liam Garcia"
+          "seatNumber": "C1",
+          "status": "booked",
+          "position": {
+            "row": "C",
+            "column": 1
+          }
         },
         {
-          "reviewerName": "AC",
-          "comment": "12345",
-          "rating": 5,
-          "date": "2025-07-10T14:41:12.549Z"
-        },
-        {
-          "reviewerName": "ABC",
-          "comment": "12345",
-          "rating": 5,
-          "date": "2025-07-10T14:50:55.377Z"
+          "seatNumber": "C2",
+          "status": "booked",
+          "position": {
+            "row": "C",
+            "column": 2
+          }
         }
       ]
     },
     {
-      "id": "3",
-      "title": "Powder Canister",
-      "category": "beauty",
-      "price": 14.99,
-      "reviews": [
+      "id": "60c72b2f9b1e8a1b4c8a4236",
+      "movieId": "60c72b2f9b1e8a1b4c8a2234",
+      "theaterId": "60c72b2f9b1e8a1b4c8a3234",
+      "startTime": "2025-08-07T18:00:00.000Z",
+      "room": "Room 3",
+      "seats": [
         {
-          "rating": 5,
-          "comment": "Very happy with my purchase!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Ethan Thompson"
+          "seatNumber": "B1",
+          "status": "booked",
+          "position": {
+            "row": "B",
+            "column": 1
+          }
         },
         {
-          "rating": 4,
-          "comment": "Great value for money!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Levi Hicks"
-        },
-        {
-          "rating": 5,
-          "comment": "Highly impressed!",
-          "date": "2024-05-23T08:56:21.618Z",
-          "reviewerName": "Hazel Gardner"
-        },
-        {
-          "rating": 5,
-          "comment": "Very pleased!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Carter Rivera"
-        },
-        {
-          "reviewerName": "Tung Ta",
-          "comment": "Rat Gay",
-          "rating": 5,
-          "date": "2025-07-10T14:36:36.550Z"
-        },
-        {
-          "reviewerName": "asdasd",
-          "comment": "asdas",
-          "rating": 5,
-          "date": "2025-07-10T14:49:44.521Z"
+          "seatNumber": "B2",
+          "status": "available",
+          "position": {
+            "row": "B",
+            "column": 2
+          }
         }
       ]
     },
     {
-      "id": "4",
-      "title": "Red Lipstick",
-      "category": "beauty",
-      "price": 12.99,
-      "reviews": [
+      "id": "60c72b2f9b1e8a1b4c8a4237",
+      "movieId": "60c72b2f9b1e8a1b4c8a2235",
+      "theaterId": "60c72b2f9b1e8a1b4c8a3234",
+      "startTime": "2025-08-07T20:00:00.000Z",
+      "room": "Room 4",
+      "seats": [
         {
-          "rating": 5,
-          "comment": "Great product!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Leo Rivera"
+          "seatNumber": "D1",
+          "status": "available",
+          "position": {
+            "row": "D",
+            "column": 1
+          }
         },
         {
-          "rating": 4,
-          "comment": "Very pleased!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Oscar Powers"
+          "seatNumber": "D2",
+          "status": "available",
+          "position": {
+            "row": "D",
+            "column": 2
+          }
         }
       ]
     },
     {
-      "id": "5",
-      "title": "Red Nail Polish",
-      "category": "beauty",
-      "price": 8.99,
-      "reviews": [
+      "id": "60c72b2f9b1e8a1b4c8a4238",
+      "movieId": "60c72b2f9b1e8a1b4c8a2234",
+      "theaterId": "60c72b2f9b1e8a1b4c8a3235",
+      "startTime": "2025-08-07T19:00:00.000Z",
+      "room": "Room 1",
+      "seats": [
         {
-          "rating": 5,
-          "comment": "Very pleased!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Leo Rivera"
+          "seatNumber": "E1",
+          "status": "available",
+          "position": {
+            "row": "E",
+            "column": 1
+          }
         },
         {
-          "rating": 5,
-          "comment": "Great product!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Evan Reed"
-        },
-        {
-          "rating": 4,
-          "comment": "Highly recommended!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Evelyn Sanchez"
+          "seatNumber": "E2",
+          "status": "booked",
+          "position": {
+            "row": "E",
+            "column": 2
+          }
         }
       ]
     },
     {
-      "id": "6",
-      "title": "Calvin Klein CK One",
-      "category": "fragrances",
-      "price": 49.99,
-      "reviews": [
+      "id": "60c72b2f9b1e8a1b4c8a4239",
+      "movieId": "60c72b2f9b1e8a1b4c8a2235",
+      "theaterId": "60c72b2f9b1e8a1b4c8a3235",
+      "startTime": "2025-08-07T21:00:00.000Z",
+      "room": "Room 2",
+      "seats": [
         {
-          "rating": 5,
-          "comment": "Great value for money!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Sophia Brown"
+          "seatNumber": "F1",
+          "status": "booked",
+          "position": {
+            "row": "F",
+            "column": 1
+          }
         },
         {
-          "rating": 3,
-          "comment": "Very disappointed!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Madison Collins"
-        },
-        {
-          "rating": 1,
-          "comment": "Poor quality!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Maya Reed"
+          "seatNumber": "F2",
+          "status": "booked",
+          "position": {
+            "row": "F",
+            "column": 2
+          }
         }
       ]
+    }
+  ],
+  "tickets": [
+    {
+      "id": "60c72b2f9b1e8a1b4c8a5234",
+      "userId": "60c72b2f9b1e8a1b4c8a1234",
+      "showtimeId": "60c72b2f9b1e8a1b4c8a4234",
+      "seats": [
+        {
+          "seatNumber": "A1",
+          "price": 12,
+          "details": {
+            "type": "adult",
+            "discount": 2
+          }
+        },
+        {
+          "seatNumber": "A2",
+          "price": 8,
+          "details": {
+            "type": "child",
+            "discount": 1
+          }
+        }
+      ],
+      "totalPrice": 17,
+      "bookingTime": "2025-08-06T10:00:00.000Z"
     },
     {
-      "id": "7",
-      "title": "Chanel Coco Noir Eau",
-      "category": "fragrances",
-      "price": 129.99,
-      "reviews": [
+      "id": "60c72b2f9b1e8a1b4c8a5235",
+      "userId": "60c72b2f9b1e8a1b4c8a1235",
+      "showtimeId": "60c72b2f9b1e8a1b4c8a4235",
+      "seats": [
         {
-          "rating": 1,
-          "comment": "Disappointing product!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Lincoln Kelly"
+          "seatNumber": "C1",
+          "price": 12,
+          "details": {
+            "type": "adult",
+            "discount": 0
+          }
         },
         {
-          "rating": 4,
-          "comment": "Great product!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Lincoln Kelly"
-        },
-        {
-          "rating": 4,
-          "comment": "Excellent quality!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Lucas Allen"
+          "seatNumber": "C2",
+          "price": 8,
+          "details": {
+            "type": "child",
+            "discount": 0
+          }
         }
-      ]
+      ],
+      "totalPrice": 20,
+      "bookingTime": "2025-08-06T11:00:00.000Z"
     },
     {
-      "id": "8",
-      "title": "Dior J'adore",
-      "category": "fragrances",
-      "price": 89.99,
-      "reviews": [
+      "id": "8310",
+      "userId": "60c72b2f9b1e8a1b4c8a1234",
+      "showtimeId": "60c72b2f9b1e8a1b4c8a4236",
+      "seats": [
         {
-          "rating": 5,
-          "comment": "Fast shipping!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Zoe Nicholson"
-        },
-        {
-          "rating": 4,
-          "comment": "Excellent quality!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Addison Wright"
-        },
-        {
-          "rating": 4,
-          "comment": "Would buy again!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Clara Berry"
-        },
-        {
-          "reviewerName": "fasdf",
-          "comment": "sadf",
-          "rating": 1,
-          "date": "2025-03-22T04:40:51.498Z"
+          "seatNumber": "B1",
+          "price": 0,
+          "type": null,
+          "discount": 0
         }
-      ]
+      ],
+      "totalPrice": 0,
+      "bookingTime": "2025-11-07T15:47:25.424Z"
     },
     {
-      "id": "9",
-      "title": "Dolce Shine Eau de",
-      "category": "fragrances",
-      "price": 69.99,
-      "reviews": [
+      "id": "8f50",
+      "userId": "60c72b2f9b1e8a1b4c8a1234",
+      "showtimeId": "60c72b2f9b1e8a1b4c8a4238",
+      "seats": [
         {
-          "rating": 4,
-          "comment": "Very satisfied!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Xavier Wright"
+          "seatNumber": "B1",
+          "price": 0,
+          "type": null,
+          "discount": 0
         },
         {
-          "rating": 1,
-          "comment": "Poor quality!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Mila Hernandez"
+          "seatNumber": "B2",
+          "price": 0,
+          "type": null,
+          "discount": 0
         },
         {
-          "rating": 5,
-          "comment": "Very happy with my purchase!",
-          "date": "2024-05-23T08:56:21.619Z",
-          "reviewerName": "Sophia Brown"
+          "seatNumber": "E2",
+          "price": 12,
+          "type": "adult",
+          "discount": 0
         }
-      ]
+      ],
+      "totalPrice": 12,
+      "bookingTime": "2025-11-07T15:47:48.504Z"
+    },
+    {
+      "id": "cd2e",
+      "userId": "60c72b2f9b1e8a1b4c8a1234",
+      "showtimeId": "60c72b2f9b1e8a1b4c8a4239",
+      "seats": [
+        {
+          "seatNumber": "F1",
+          "price": 8,
+          "type": "child",
+          "discount": 0
+        },
+        {
+          "seatNumber": "F2",
+          "price": 12,
+          "type": "adult",
+          "discount": 0
+        }
+      ],
+      "totalPrice": 20,
+      "bookingTime": "2025-11-07T15:48:58.725Z"
     }
   ]
 }
