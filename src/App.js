@@ -1,17 +1,19 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AppProvider from "./provider/AppProvider";
 import HomePage from "./components/pages/HomePage";
-import MovieList from "./components/pages/MovieList";
-import BookTicket from "./components/pages/BookTicket";
+import ReportPage from "./components/pages/ReportPage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route index path="/movies-showtimes" element={<MovieList />} />
-        <Route index path="/booking" element={<BookTicket />} />
-      </Routes>
-    </BrowserRouter>
+    <AppProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/report" element={<ReportPage />} />
+        </Routes>
+      </BrowserRouter>
+    </AppProvider>
   );
 }
 

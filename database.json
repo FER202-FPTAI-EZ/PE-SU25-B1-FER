@@ -1,369 +1,266 @@
 {
-  "users": [
+  "courses": [
     {
-      "id": "60c72b2f9b1e8a1b4c8a1234",
-      "username": "john_doe",
-      "email": "john@example.com"
+      "id": "1",
+      "title": "Introduction to React.js",
+      "instructor": "Dr. Sarah Smith",
+      "department": "Computer Science",
+      "duration": "12 Weeks",
+      "enrollments": [
+        {
+          "studentName": "Alice Johnson",
+          "email": "alice@example.com",
+          "year": 2,
+          "grade": 85,
+          "date": "2024-03-15T10:30:00Z"
+        },
+        {
+          "studentName": "Bob Wilson",
+          "email": "bob@example.com",
+          "year": 3,
+          "grade": 92,
+          "date": "2024-03-16T14:20:00Z"
+        },
+        {
+          "studentName": "Tran Van Khuyen",
+          "email": "abc@gmail.com",
+          "year": "4",
+          "date": "2026-03-20T15:19:28.603Z"
+        },
+        {
+          "studentName": "Tran Van Khuyen",
+          "email": "abc@gmail.com",
+          "year": 1,
+          "date": "2026-03-20T15:21:19.584Z"
+        },
+        {
+          "studentName": "Tran Van Khuyen",
+          "email": "abcd@gmail.com",
+          "year": "2",
+          "date": "2026-03-20T15:22:30.929Z"
+        }
+      ]
     },
     {
-      "id": "60c72b2f9b1e8a1b4c8a1235",
-      "username": "jane_smith",
-      "email": "jane@example.com"
+      "id": "2",
+      "title": "Advanced Calculus",
+      "instructor": "Prof. Michael Brown",
+      "department": "Mathematics",
+      "duration": "10 Weeks",
+      "enrollments": [
+        {
+          "studentName": "Charlie Davis",
+          "email": "charlie@math.com",
+          "year": 1,
+          "grade": 78,
+          "date": "2024-03-10T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Modern Art History",
+      "instructor": "Elena Rodriguez",
+      "department": "Arts",
+      "duration": "8 Weeks",
+      "enrollments": [
+        {
+          "studentName": "Diana Prince",
+          "email": "diana@arts.edu",
+          "year": 4,
+          "grade": 95,
+          "date": "2024-03-12T11:45:00Z"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Data Structures & Algorithms",
+      "instructor": "Dr. Alan Turing",
+      "department": "Computer Science",
+      "duration": "14 Weeks",
+      "enrollments": []
+    },
+    {
+      "id": "5",
+      "title": "Organic Chemistry I",
+      "instructor": "Dr. Marie Curie",
+      "department": "Science",
+      "duration": "12 Weeks",
+      "enrollments": [
+        {
+          "studentName": "Edward Norton",
+          "email": "ed@science.org",
+          "year": 2,
+          "grade": 88,
+          "date": "2024-03-18T08:30:00Z"
+        },
+        {
+          "studentName": "Fiona Gallagher",
+          "email": "fiona@science.org",
+          "year": 2,
+          "grade": 74,
+          "date": "2024-03-19T16:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Introduction to Psychology",
+      "instructor": "Dr. Sigmund Freud",
+      "department": "Social Science",
+      "duration": "10 Weeks",
+      "enrollments": [
+        {
+          "studentName": "George Miller",
+          "email": "george@psy.edu",
+          "year": 1,
+          "grade": 90,
+          "date": "2024-03-20T12:00:00Z"
+        },
+        {
+          "studentName": "Tran Van Khuyen",
+          "email": "abcd@gmail.com",
+          "year": 1,
+          "date": "2026-03-20T15:22:51.431Z"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Macroeconomics",
+      "instructor": "John Maynard",
+      "department": "Business",
+      "duration": "12 Weeks",
+      "enrollments": [
+        {
+          "studentName": "Hannah Abbott",
+          "email": "hannah@biz.com",
+          "year": 3,
+          "grade": 82,
+          "date": "2024-03-21T10:10:00Z"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Creative Writing",
+      "instructor": "Ernest Hemingway",
+      "department": "Arts",
+      "duration": "6 Weeks",
+      "enrollments": []
+    },
+    {
+      "id": "9",
+      "title": "Linear Algebra",
+      "instructor": "Gilbert Strang",
+      "department": "Mathematics",
+      "duration": "10 Weeks",
+      "enrollments": [
+        {
+          "studentName": "Ian Wright",
+          "email": "ian@maths.com",
+          "year": 2,
+          "grade": 91,
+          "date": "2024-03-22T09:45:00Z"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Machine Learning",
+      "instructor": "Andrew Ng",
+      "department": "Computer Science",
+      "duration": "16 Weeks",
+      "enrollments": [
+        {
+          "studentName": "Jack Sparrow",
+          "email": "jack@blackpearl.com",
+          "year": 4,
+          "grade": 85,
+          "date": "2024-03-23T15:30:00Z"
+        },
+        {
+          "studentName": "Kevin Flynn",
+          "email": "kevin@grid.com",
+          "year": 4,
+          "grade": 98,
+          "date": "2024-03-24T11:20:00Z"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Digital Marketing",
+      "instructor": "Seth Godin",
+      "department": "Business",
+      "duration": "8 Weeks",
+      "enrollments": [
+        {
+          "studentName": "Laura Palmer",
+          "email": "laura@peaks.com",
+          "year": 2,
+          "grade": 79,
+          "date": "2024-03-25T14:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "World History",
+      "instructor": "Arnold Toynbee",
+      "department": "Social Science",
+      "duration": "12 Weeks",
+      "enrollments": []
+    },
+    {
+      "id": "13",
+      "title": "Classical Mechanics",
+      "instructor": "Isaac Newton",
+      "department": "Science",
+      "duration": "14 Weeks",
+      "enrollments": [
+        {
+          "studentName": "Miles Morales",
+          "email": "miles@spider.net",
+          "year": 1,
+          "grade": 88,
+          "date": "2024-03-26T10:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Intro to Philosophy",
+      "instructor": "Socrates",
+      "department": "Social Science",
+      "duration": "10 Weeks",
+      "enrollments": [
+        {
+          "studentName": "Nina Simone",
+          "email": "nina@jazz.com",
+          "year": 3,
+          "grade": 94,
+          "date": "2024-03-27T16:45:00Z"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Graphic Design 101",
+      "instructor": "Paul Rand",
+      "department": "Arts",
+      "duration": "8 Weeks",
+      "enrollments": [
+        {
+          "studentName": "Oscar Isaac",
+          "email": "oscar@film.com",
+          "year": 2,
+          "grade": 86,
+          "date": "2024-03-28T13:20:00Z"
+        }
+      ]
     }
   ],
-  "movies": [
-    {
-      "id": "60c72b2f9b1e8a1b4c8a2234",
-      "title": "The Matrix",
-      "genre": [
-        "Action",
-        "Sci-Fi"
-      ],
-      "duration": 136,
-      "details": {
-        "director": "Wachowski Sisters",
-        "releaseDate": "1999-03-31T00:00:00.000Z",
-        "rating": {
-          "score": 8.7,
-          "source": "IMDb"
-        }
-      }
-    },
-    {
-      "id": "60c72b2f9b1e8a1b4c8a2235",
-      "title": "Inception",
-      "genre": [
-        "Sci-Fi",
-        "Thriller"
-      ],
-      "duration": 148,
-      "details": {
-        "director": "Christopher Nolan",
-        "releaseDate": "2010-07-16T00:00:00.000Z",
-        "rating": {
-          "score": 8.8,
-          "source": "IMDb"
-        }
-      }
-    },
-    {
-      "id": "60c72b2f9b1e8a1b4c8a2236",
-      "title": "The Godfather",
-      "genre": [
-        "Crime"
-      ],
-      "duration": 180,
-      "details": {
-        "director": "Francis Ford Coppola",
-        "releaseDate": "2000-07-15T00:00:00.000Z",
-        "rating": {
-          "score": 8.5,
-          "source": "IMDb"
-        }
-      }
-    }
-  ],
-  "theaters": [
-    {
-      "id": "60c72b2f9b1e8a1b4c8a3234",
-      "name": "CGV Vincom",
-      "location": {
-        "address": "70 Tran Hung Dao",
-        "city": "Ho Chi Minh",
-        "coordinates": {
-          "lat": 10.7769,
-          "lng": 106.7009
-        }
-      },
-      "showtimes": [
-        "60c72b2f9b1e8a1b4c8a4234",
-        "60c72b2f9b1e8a1b4c8a4235",
-        "60c72b2f9b1e8a1b4c8a4236",
-        "60c72b2f9b1e8a1b4c8a4237"
-      ]
-    },
-    {
-      "id": "60c72b2f9b1e8a1b4c8a3235",
-      "name": "Lotte Cinema",
-      "location": {
-        "address": "123 Le Loi",
-        "city": "Ho Chi Minh",
-        "coordinates": {
-          "lat": 10.7731,
-          "lng": 106.698
-        }
-      },
-      "showtimes": [
-        "60c72b2f9b1e8a1b4c8a4238",
-        "60c72b2f9b1e8a1b4c8a4239"
-      ]
-    }
-  ],
-  "showtimes": [
-    {
-      "id": "60c72b2f9b1e8a1b4c8a4234",
-      "movieId": "60c72b2f9b1e8a1b4c8a2234",
-      "theaterId": "60c72b2f9b1e8a1b4c8a3234",
-      "startTime": "2025-08-06T19:00:00.000Z",
-      "room": "Room 1",
-      "seats": [
-        {
-          "seatNumber": "A1",
-          "status": "booked",
-          "position": {
-            "row": "A",
-            "column": 1
-          }
-        },
-        {
-          "seatNumber": "A2",
-          "status": "booked",
-          "position": {
-            "row": "A",
-            "column": 2
-          }
-        }
-      ]
-    },
-    {
-      "id": "60c72b2f9b1e8a1b4c8a4235",
-      "movieId": "60c72b2f9b1e8a1b4c8a2235",
-      "theaterId": "60c72b2f9b1e8a1b4c8a3234",
-      "startTime": "2025-08-06T21:00:00.000Z",
-      "room": "Room 2",
-      "seats": [
-        {
-          "seatNumber": "C1",
-          "status": "booked",
-          "position": {
-            "row": "C",
-            "column": 1
-          }
-        },
-        {
-          "seatNumber": "C2",
-          "status": "booked",
-          "position": {
-            "row": "C",
-            "column": 2
-          }
-        }
-      ]
-    },
-    {
-      "id": "60c72b2f9b1e8a1b4c8a4236",
-      "movieId": "60c72b2f9b1e8a1b4c8a2234",
-      "theaterId": "60c72b2f9b1e8a1b4c8a3234",
-      "startTime": "2025-08-07T18:00:00.000Z",
-      "room": "Room 3",
-      "seats": [
-        {
-          "seatNumber": "B1",
-          "status": "booked",
-          "position": {
-            "row": "B",
-            "column": 1
-          }
-        },
-        {
-          "seatNumber": "B2",
-          "status": "available",
-          "position": {
-            "row": "B",
-            "column": 2
-          }
-        }
-      ]
-    },
-    {
-      "id": "60c72b2f9b1e8a1b4c8a4237",
-      "movieId": "60c72b2f9b1e8a1b4c8a2235",
-      "theaterId": "60c72b2f9b1e8a1b4c8a3234",
-      "startTime": "2025-08-07T20:00:00.000Z",
-      "room": "Room 4",
-      "seats": [
-        {
-          "seatNumber": "D1",
-          "status": "available",
-          "position": {
-            "row": "D",
-            "column": 1
-          }
-        },
-        {
-          "seatNumber": "D2",
-          "status": "available",
-          "position": {
-            "row": "D",
-            "column": 2
-          }
-        }
-      ]
-    },
-    {
-      "id": "60c72b2f9b1e8a1b4c8a4238",
-      "movieId": "60c72b2f9b1e8a1b4c8a2234",
-      "theaterId": "60c72b2f9b1e8a1b4c8a3235",
-      "startTime": "2025-08-07T19:00:00.000Z",
-      "room": "Room 1",
-      "seats": [
-        {
-          "seatNumber": "E1",
-          "status": "available",
-          "position": {
-            "row": "E",
-            "column": 1
-          }
-        },
-        {
-          "seatNumber": "E2",
-          "status": "booked",
-          "position": {
-            "row": "E",
-            "column": 2
-          }
-        }
-      ]
-    },
-    {
-      "id": "60c72b2f9b1e8a1b4c8a4239",
-      "movieId": "60c72b2f9b1e8a1b4c8a2235",
-      "theaterId": "60c72b2f9b1e8a1b4c8a3235",
-      "startTime": "2025-08-07T21:00:00.000Z",
-      "room": "Room 2",
-      "seats": [
-        {
-          "seatNumber": "F1",
-          "status": "booked",
-          "position": {
-            "row": "F",
-            "column": 1
-          }
-        },
-        {
-          "seatNumber": "F2",
-          "status": "booked",
-          "position": {
-            "row": "F",
-            "column": 2
-          }
-        }
-      ]
-    }
-  ],
-  "tickets": [
-    {
-      "id": "60c72b2f9b1e8a1b4c8a5234",
-      "userId": "60c72b2f9b1e8a1b4c8a1234",
-      "showtimeId": "60c72b2f9b1e8a1b4c8a4234",
-      "seats": [
-        {
-          "seatNumber": "A1",
-          "price": 12,
-          "details": {
-            "type": "adult",
-            "discount": 2
-          }
-        },
-        {
-          "seatNumber": "A2",
-          "price": 8,
-          "details": {
-            "type": "child",
-            "discount": 1
-          }
-        }
-      ],
-      "totalPrice": 17,
-      "bookingTime": "2025-08-06T10:00:00.000Z"
-    },
-    {
-      "id": "60c72b2f9b1e8a1b4c8a5235",
-      "userId": "60c72b2f9b1e8a1b4c8a1235",
-      "showtimeId": "60c72b2f9b1e8a1b4c8a4235",
-      "seats": [
-        {
-          "seatNumber": "C1",
-          "price": 12,
-          "details": {
-            "type": "adult",
-            "discount": 0
-          }
-        },
-        {
-          "seatNumber": "C2",
-          "price": 8,
-          "details": {
-            "type": "child",
-            "discount": 0
-          }
-        }
-      ],
-      "totalPrice": 20,
-      "bookingTime": "2025-08-06T11:00:00.000Z"
-    },
-    {
-      "id": "8310",
-      "userId": "60c72b2f9b1e8a1b4c8a1234",
-      "showtimeId": "60c72b2f9b1e8a1b4c8a4236",
-      "seats": [
-        {
-          "seatNumber": "B1",
-          "price": 0,
-          "type": null,
-          "discount": 0
-        }
-      ],
-      "totalPrice": 0,
-      "bookingTime": "2025-11-07T15:47:25.424Z"
-    },
-    {
-      "id": "8f50",
-      "userId": "60c72b2f9b1e8a1b4c8a1234",
-      "showtimeId": "60c72b2f9b1e8a1b4c8a4238",
-      "seats": [
-        {
-          "seatNumber": "B1",
-          "price": 0,
-          "type": null,
-          "discount": 0
-        },
-        {
-          "seatNumber": "B2",
-          "price": 0,
-          "type": null,
-          "discount": 0
-        },
-        {
-          "seatNumber": "E2",
-          "price": 12,
-          "type": "adult",
-          "discount": 0
-        }
-      ],
-      "totalPrice": 12,
-      "bookingTime": "2025-11-07T15:47:48.504Z"
-    },
-    {
-      "id": "cd2e",
-      "userId": "60c72b2f9b1e8a1b4c8a1234",
-      "showtimeId": "60c72b2f9b1e8a1b4c8a4239",
-      "seats": [
-        {
-          "seatNumber": "F1",
-          "price": 8,
-          "type": "child",
-          "discount": 0
-        },
-        {
-          "seatNumber": "F2",
-          "price": 12,
-          "type": "adult",
-          "discount": 0
-        }
-      ],
-      "totalPrice": 20,
-      "bookingTime": "2025-11-07T15:48:58.725Z"
-    }
-  ]
+  "$schema": "./node_modules/json-server/schema.json"
 }
