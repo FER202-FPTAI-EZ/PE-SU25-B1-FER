@@ -1,30 +1,32 @@
-import { createContext, useContext, useEffect, useState } from "react"
-import { instance } from "../lib/axios"
+import { createContext, useContext, useEffect, useState } from "react";
+import { instance } from "../lib/axios";
 
-const AppContext = createContext()
+// Context giữ các bảng TRA CỨU dùng ở nhiều trang (subjects, students...)
+// Bảng chính của từng trang thì trang đó tự fetch theo đúng API đề ghi.
+const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-    const [courses, setCourses] = useState([])
+    const [subjects, setSubjects] = useState([]);
+    const [students, setStudents] = useState([]);
 
-    const fetchCourses = async () => {
-        await instance.get("/courses").then(res => {
-            setCourses(res.data)
-        })
-    }
+    // Gọi lại sau khi thêm / sửa / xóa ở các bảng này
+    const reload = () => {
+        instance.get("/subjects").then((res) => setSubjects(res.data));
+        instance.get("/students").then((res) => setStudents(res.data));
+    };
 
     useEffect(() => {
-        fetchCourses()
-    }, [])
+        reload();
+    }, []);
 
+    // Trang nào cần: const { subjects, students, reload } = useAppContext()
     return (
-        <AppContext.Provider value={{ courses, setCourses }}>
+        <AppContext.Provider value={{ subjects, students, reload }}>
             {children}
         </AppContext.Provider>
-    )
-}
+    );
+};
 
-export const useAppContext = () => {
-    return useContext(AppContext)
-}
+export const useAppContext = () => useContext(AppContext);
 
-export default AppProvider
+export default AppProvider;
