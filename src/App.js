@@ -8,27 +8,32 @@ function App() {
     return (
         <AppProvider>
             <BrowserRouter>
-                {/* ===== ĐỔI THEO ĐỀ: tên app + các link trên header ===== */}
-                <nav className="app-header">
-                    <span className="app-brand">Attendance System</span>
-                    <NavLink to="/classes" className="app-tab">Classes</NavLink>
-                </nav>
+                {/* Nền cả trang */}
+                <div style={{ background: "#fffaf5", minHeight: "100vh" }}>
+                    {/* ===== ĐỔI THEO ĐỀ: tên app + các link trên header ===== */}
+                    <nav style={{ display: "flex", alignItems: "center", gap: 24, padding: "12px 24px", background: "linear-gradient(90deg, #7c2d12, #c2410c)" }}>
+                        <span style={{ color: "#fff", fontWeight: 700 }}>Attendance System</span>
+                        <NavLink to="/classes" style={{ color: "#fff", textDecoration: "none", fontSize: 14, padding: "4px 12px", borderRadius: 4, background: "rgba(255,255,255,0.2)" }}>
+                            Classes
+                        </NavLink>
+                    </nav>
 
-                <main className="app-main">
-                    {/* ===== ĐỔI THEO ĐỀ: copy-paste URL từ đề, KHÔNG tự gõ ===== */}
-                    <Routes>
-                        <Route path="/" element={<Navigate to="/classes" replace />} />
+                    <main style={{ maxWidth: 1100, margin: "0 auto", padding: "24px 16px" }}>
+                        {/* ===== ĐỔI THEO ĐỀ: copy-paste URL từ đề, KHÔNG tự gõ ===== */}
+                        <Routes>
+                            <Route path="/" element={<Navigate to="/classes" replace />} />
 
-                        <Route path="/classes" element={<ListPage />} />
-                        <Route path="/classes/:id/attendance-summary" element={<DetailPage />} />
+                            <Route path="/classes" element={<ListPage />} />
+                            <Route path="/classes/:id/attendance-summary" element={<DetailPage />} />
 
-                        {/* TÙY CHỌN: thêm / sửa dùng chung 1 trang */}
-                        <Route path="/classes/new" element={<FormPage />} />
-                        <Route path="/classes/:id/edit" element={<FormPage />} />
+                            {/* TÙY CHỌN: thêm / sửa dùng chung 1 trang */}
+                            <Route path="/classes/new" element={<FormPage />} />
+                            <Route path="/classes/:id/edit" element={<FormPage />} />
 
-                        <Route path="*" element={<h4>Page not found</h4>} />
-                    </Routes>
-                </main>
+                            <Route path="*" element={<h4>Page not found</h4>} />
+                        </Routes>
+                    </main>
+                </div>
             </BrowserRouter>
         </AppProvider>
     );

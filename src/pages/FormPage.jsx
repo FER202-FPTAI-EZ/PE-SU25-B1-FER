@@ -70,14 +70,14 @@ const FormPage = () => {
     // ---------- 4. RENDER ----------
     return (
         <div style={{ maxWidth: 560 }}>
-            <Button variant="link" className="back-link" onClick={() => navigate(`/classes`)}>
+            <Button variant="link" style={{ color: "#c2410c", padding: 0, marginBottom: 12, textDecoration: "none", fontWeight: 600 }} onClick={() => navigate(`/classes`)}>
                 ← Back
             </Button>
-            <h3 className="page-title">{isEdit ? "Edit Class" : "Add Class"}</h3>
+            <h3 style={{ color: "#7c2d12", fontWeight: 700 }}>{isEdit ? "Edit Class" : "Add Class"}</h3>
 
-            <Form className="info-card" onSubmit={handleSubmit} noValidate>
+            <Form style={{ background: "#fff", border: "1px solid #fde3c8", borderRadius: 8, padding: "14px 18px", marginBottom: 16 }} onSubmit={handleSubmit} noValidate>
                 {/* Ô chữ */}
-                <Form.Group className="mb-3">
+                <Form.Group style={{ marginBottom: 16 }}>
                     <Form.Label>Class Name</Form.Label>
                     <Form.Control name="className" value={form.className}
                         onChange={handleChange} isInvalid={!!errors.className} />
@@ -85,7 +85,7 @@ const FormPage = () => {
                 </Form.Group>
 
                 {/* Select lấy từ API */}
-                <Form.Group className="mb-3">
+                <Form.Group style={{ marginBottom: 16 }}>
                     <Form.Label>Subject</Form.Label>
                     <Form.Select name="subjectId" value={form.subjectId}
                         onChange={handleChange} isInvalid={!!errors.subjectId}>
@@ -97,7 +97,7 @@ const FormPage = () => {
                     <Form.Control.Feedback type="invalid">{errors.subjectId}</Form.Control.Feedback>
                 </Form.Group>
 
-                <Form.Group className="mb-3">
+                <Form.Group style={{ marginBottom: 16 }}>
                     <Form.Label>Lecturer</Form.Label>
                     <Form.Control name="lecturerName" value={form.lecturerName}
                         onChange={handleChange} isInvalid={!!errors.lecturerName} />
@@ -105,8 +105,8 @@ const FormPage = () => {
                 </Form.Group>
 
                 {/* Radio */}
-                <Form.Group className="mb-3">
-                    <Form.Label className="d-block">Status</Form.Label>
+                <Form.Group style={{ marginBottom: 16 }}>
+                    <Form.Label style={{ display: "block" }}>Status</Form.Label>
                     {["OPEN", "CLOSED"].map((v) => (
                         <Form.Check key={v} inline type="radio" name="status" id={`form-${v}`}
                             label={v} value={v} checked={form.status === v} onChange={handleChange} />
@@ -121,7 +121,7 @@ const FormPage = () => {
                     onChange={(e) => setForm({ ...form, active: e.target.checked })} />
                 Nhớ: ô number gửi lên dạng chuỗi -> Number(form.price) trước khi POST */}
 
-                <Button type="submit" className="btn-orange">{isEdit ? "Update" : "Create"}</Button>
+                <Button type="submit" style={{ background: "#c2410c", borderColor: "#c2410c" }}>{isEdit ? "Update" : "Create"}</Button>
             </Form>
         </div>
     );

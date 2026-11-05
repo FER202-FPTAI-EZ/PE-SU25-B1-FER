@@ -35,7 +35,6 @@ API: http://localhost:9999 · App: http://localhost:3000
 | `src/pages/ListPage.jsx` | Danh sách: dropdown, radio trên URL, tìm kiếm, badge, chuyển trang, xóa |
 | `src/pages/DetailPage.jsx` | Chi tiết: `useParams`, thẻ thống kê, sort 3 trạng thái, checkbox lọc |
 | `src/pages/FormPage.jsx` | Thêm / sửa chung 1 file, kiểm tra dữ liệu, POST / PUT |
-| `src/index.css` | Màu: đổi `--main`, `--dark` |
 | `examples/paper-1/` | Lời giải đầy đủ paper-1 để tham khảo |
 
 Mọi trang theo cùng thứ tự: **1 data → 2 state → 3 helper → 4 lọc/sort → 5 render**.
@@ -92,7 +91,7 @@ toPercent(73.333)   // "73.3%"
 **Badge / tô màu dòng**
 ```jsx
 <Badge bg={ok ? "success" : "danger"}>{ok ? "OK" : "Warning"}</Badge>
-<tr className={warning ? "row-warning" : ""}>
+<tr style={{ "--bs-table-bg": warning ? "#FFF5F5" : undefined }}>   // tô nền cả dòng
 ```
 
 **Thêm / sửa / xóa**

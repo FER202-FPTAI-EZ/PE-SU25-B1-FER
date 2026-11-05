@@ -54,12 +54,12 @@ const ClassListPage = () => {
     // ---------- 5. RENDER ----------
     return (
         <div>
-            <h3 className="page-title">Class List</h3>
-            <p className="page-subtitle">Manage and view attendance by class</p>
+            <h3 style={{ color: "#7c2d12", fontWeight: 700 }}>Class List</h3>
+            <p style={{ color: "#6b7280", fontSize: 14 }}>Manage and view attendance by class</p>
 
             {/* Filter card */}
-            <div className="filter-card">
-                <Form.Label className="mb-0">Subject:</Form.Label>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", background: "#fff", border: "1px solid #fde3c8", borderRadius: 8, padding: "14px 18px", marginBottom: 16 }}>
+                <Form.Label style={{ marginBottom: 0 }}>Subject:</Form.Label>
                 <Form.Select
                     style={{ maxWidth: 260 }}
                     value={subjectId}
@@ -71,7 +71,7 @@ const ClassListPage = () => {
                     ))}
                 </Form.Select>
 
-                <Form.Label className="mb-0 ms-3">Status:</Form.Label>
+                <Form.Label style={{ marginBottom: 0, marginLeft: 16 }}>Status:</Form.Label>
                 {["ALL", "OPEN", "CLOSED"].map((value) => (
                     <Form.Check
                         key={value}
@@ -87,16 +87,16 @@ const ClassListPage = () => {
             </div>
 
             {/* Result count */}
-            <p className="result-count">
+            <p style={{ fontSize: 13, color: "#6b7280" }}>
                 Showing <b>{filteredClasses.length}</b> of {classes.length} classes
                 {subjectId !== "all" && <> for <b>{getSubjectName(subjectId)}</b></>}
                 {status !== "ALL" && <> with status <b>{status}</b></>}
             </p>
 
             {/* Table */}
-            <Table hover className="app-table">
+            <Table hover style={{ verticalAlign: "middle" }}>
                 <thead>
-                    <tr>
+                    <tr style={{ "--bs-table-bg": "#7c2d12", "--bs-table-color": "#fff", fontSize: 12, textTransform: "uppercase" }}>
                         <th>No</th>
                         <th>Class Name</th>
                         <th>Subject Name</th>
@@ -123,7 +123,7 @@ const ClassListPage = () => {
                             <td>
                                 <Button
                                     size="sm"
-                                    className="btn-orange"
+                                    style={{ background: "#c2410c", borderColor: "#c2410c" }}
                                     onClick={() => navigate(`/classes/${c.id}/attendance-summary`)}
                                 >
                                     View Attendance Summary

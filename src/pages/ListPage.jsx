@@ -51,20 +51,20 @@ const ListPage = () => {
     // ---------- 5. RENDER ----------
     return (
         <div>
-            <div className="d-flex justify-content-between align-items-start">
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                 <div>
-                    <h3 className="page-title">Class List</h3>
-                    <p className="page-subtitle">Manage and view attendance by class</p>
+                    <h3 style={{ color: "#7c2d12", fontWeight: 700 }}>Class List</h3>
+                    <p style={{ color: "#6b7280", fontSize: 14 }}>Manage and view attendance by class</p>
                 </div>
                 {/* TÙY CHỌN: nút thêm mới */}
-                <Button className="btn-orange" onClick={() => navigate(`/classes/new`)}>
+                <Button style={{ background: "#c2410c", borderColor: "#c2410c" }} onClick={() => navigate(`/classes/new`)}>
                     <i className="bi bi-plus-lg"></i> Add
                 </Button>
             </div>
 
             {/* Bộ lọc */}
-            <div className="filter-card">
-                <Form.Label className="mb-0">Subject:</Form.Label>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", background: "#fff", border: "1px solid #fde3c8", borderRadius: 8, padding: "14px 18px", marginBottom: 16 }}>
+                <Form.Label style={{ marginBottom: 0 }}>Subject:</Form.Label>
                 <Form.Select style={{ maxWidth: 240 }} value={subjectId}
                     onChange={(e) => setSubjectId(e.target.value)}>
                     <option value="all">All Subjects</option>
@@ -73,7 +73,7 @@ const ListPage = () => {
                     ))}
                 </Form.Select>
 
-                <Form.Label className="mb-0 ms-3">Status:</Form.Label>
+                <Form.Label style={{ marginBottom: 0, marginLeft: 16 }}>Status:</Form.Label>
                 {["ALL", "OPEN", "CLOSED"].map((value) => (
                     <Form.Check key={value} inline type="radio" name="status"
                         id={`status-${value}`}
@@ -83,22 +83,22 @@ const ListPage = () => {
                 ))}
 
                 {/* TÙY CHỌN: tìm kiếm theo tên */}
-                <Form.Control style={{ maxWidth: 200 }} className="ms-auto"
+                <Form.Control style={{ maxWidth: 200, marginLeft: "auto" }}
                     placeholder="Search name..." value={keyword}
                     onChange={(e) => setKeyword(e.target.value)} />
             </div>
 
             {/* Số kết quả */}
-            <p className="result-count">
+            <p style={{ fontSize: 13, color: "#6b7280" }}>
                 Showing <b>{rows.length}</b> of {items.length} classes
                 {subjectId !== "all" && <> for <b>{subjectName(subjectId)}</b></>}
                 {status !== "ALL" && <> with status <b>{status}</b></>}
             </p>
 
             {/* Bảng — ĐỔI: cột theo đề */}
-            <Table hover className="app-table">
+            <Table hover style={{ verticalAlign: "middle" }}>
                 <thead>
-                    <tr>
+                    <tr style={{ "--bs-table-bg": "#7c2d12", "--bs-table-color": "#fff", fontSize: 12, textTransform: "uppercase" }}>
                         <th>No</th>
                         <th>Class Name</th>
                         <th>Subject Name</th>
@@ -110,7 +110,7 @@ const ListPage = () => {
                 </thead>
                 <tbody>
                     {rows.length === 0 && (
-                        <tr><td colSpan={7} className="text-center text-muted">No data</td></tr>
+                        <tr><td colSpan={7} style={{ textAlign: "center", color: "#6c757d" }}>No data</td></tr>
                     )}
                     {rows.map((item, index) => (
                         <tr key={item.id}>
@@ -124,19 +124,10 @@ const ListPage = () => {
                                     {item.status}
                                 </Badge>
                             </td>
-                            <td className="text-nowrap">
-                                <Button size="sm" className="btn-orange me-1"
+                            <td style={{ whiteSpace: "nowrap" }}>
+                                <Button size="sm" style={{ background: "#c2410c", borderColor: "#c2410c", marginRight: 4 }}
                                     onClick={() => navigate(`/classes/${item.id}/attendance-summary`)}>
                                     View Attendance Summary
-                                </Button>
-                                {/* TÙY CHỌN: sửa / xóa */}
-                                <Button size="sm" variant="outline-secondary" className="me-1"
-                                    onClick={() => navigate(`/classes/${item.id}/edit`)}>
-                                    <i className="bi bi-pencil"></i>
-                                </Button>
-                                <Button size="sm" variant="outline-danger"
-                                    onClick={() => handleDelete(item)}>
-                                    <i className="bi bi-trash"></i>
                                 </Button>
                             </td>
                         </tr>

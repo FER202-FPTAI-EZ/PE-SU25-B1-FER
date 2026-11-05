@@ -48,48 +48,48 @@ const DetailPage = () => {
 
     return (
         <div>
-            <Button variant="link" className="back-link" onClick={() => navigate("/classes")}>
+            <Button variant="link" style={{ color: "#c2410c", padding: 0, marginBottom: 12, textDecoration: "none", fontWeight: 600 }} onClick={() => navigate("/classes")}>
                 ← Back to Classes
             </Button>
 
-            <div className="info-card">
-                <h4 className="page-title mb-1">{item.className} — Attendance Summary</h4>
-                <small className="text-muted">
+            <div style={{ background: "#fff", border: "1px solid #fde3c8", borderRadius: 8, padding: "14px 18px", marginBottom: 16 }}>
+                <h4 style={{ color: "#7c2d12", fontWeight: 700, marginBottom: 4 }}>{item.className} — Attendance Summary</h4>
+                <small style={{ color: "#6c757d" }}>
                     {subject?.code} — {subject?.name} | Lecturer: {item.lecturerName}
                 </small>
             </div>
 
             {/* Thẻ thống kê — ĐỔI: số thẻ / nội dung */}
-            <div className="stat-row">
-                <div className="stat-card">
-                    <div className="stat-label">Total Students</div>
-                    <div className="stat-value">{total}</div>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                <div style={{ flex: 1, minWidth: 180, background: "#fff", border: "1px solid #fde3c8", borderRadius: 8, padding: "14px 18px", marginBottom: 16 }}>
+                    <div style={{ fontSize: 12, textTransform: "uppercase", color: "#6b7280", fontWeight: 600 }}>Total Students</div>
+                    <div style={{ fontSize: 26, fontWeight: 700 }}>{total}</div>
                 </div>
-                <div className="stat-card">
-                    <div className="stat-label">Warning</div>
-                    <div className="stat-value text-red">{warningCount}</div>
+                <div style={{ flex: 1, minWidth: 180, background: "#fff", border: "1px solid #fde3c8", borderRadius: 8, padding: "14px 18px", marginBottom: 16 }}>
+                    <div style={{ fontSize: 12, textTransform: "uppercase", color: "#6b7280", fontWeight: 600 }}>Warning</div>
+                    <div style={{ fontSize: 26, fontWeight: 700, color: "#dc2626" }}>{warningCount}</div>
                 </div>
-                <div className="stat-card">
-                    <div className="stat-label">Average Rate</div>
-                    <div className={`stat-value ${isWarning(avgRate) ? "text-red" : "text-green"}`}>
+                <div style={{ flex: 1, minWidth: 180, background: "#fff", border: "1px solid #fde3c8", borderRadius: 8, padding: "14px 18px", marginBottom: 16 }}>
+                    <div style={{ fontSize: 12, textTransform: "uppercase", color: "#6b7280", fontWeight: 600 }}>Average Rate</div>
+                    <div style={{ fontSize: 26, fontWeight: 700, color: isWarning(avgRate) ? "#dc2626" : "#16a34a" }}>
                         {toPercent(avgRate)}
                     </div>
                 </div>
             </div>
 
-            <div className="d-flex justify-content-between align-items-center mb-2">
-                <Form.Check type="checkbox" id="warning-only" className="orange-check"
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+                <Form.Check type="checkbox" id="warning-only"
                     label="Show warning students only (<80%)"
                     checked={warningOnly}
                     onChange={(e) => setWarningOnly(e.target.checked)} />
-                <small className="text-muted">
+                <small style={{ color: "#6c757d" }}>
                     Showing <b>{rows.length}</b> of {total} students
                 </small>
             </div>
 
-            <Table className="app-table">
+            <Table style={{ verticalAlign: "middle" }}>
                 <thead>
-                    <tr>
+                    <tr style={{ "--bs-table-bg": "#7c2d12", "--bs-table-color": "#fff", fontSize: 12, textTransform: "uppercase" }}>
                         <th>No</th>
                         <th>Student Code</th>
                         <th>Full Name</th>
@@ -98,7 +98,7 @@ const DetailPage = () => {
                         <th>Absent</th>
                         {/* Bấm để sort; header đổi màu khi đang sort */}
                         <th role="button"
-                            className={sortOrder !== "none" ? "sort-active" : ""}
+                            style={{ cursor: "pointer", color: sortOrder !== "none" ? "#fdba74" : "#fff" }}
                             onClick={() => setSortOrder(nextSort(sortOrder))}>
                             Att. Rate {sortIcon(sortOrder)}
                         </th>
@@ -109,14 +109,14 @@ const DetailPage = () => {
                     {rows.map((r, index) => {
                         const warning = isWarning(r.attendanceRate);
                         return (
-                            <tr key={r.id} className={warning ? "row-warning" : ""}>
+                            <tr key={r.id} style={{ "--bs-table-bg": warning ? "#FFF5F5" : undefined }}>
                                 <td>{index + 1}</td>
                                 <td><b>{student(r.studentId).studentCode}</b></td>
                                 <td>{student(r.studentId).fullName}</td>
                                 <td>{r.totalSessions}</td>
-                                <td className="text-green">{r.present}</td>
-                                <td className="text-red">{r.absent}</td>
-                                <td className={`fw-bold ${warning ? "text-red" : "text-green"}`}>
+                                <td style={{ color: "#16a34a" }}>{r.present}</td>
+                                <td style={{ color: "#dc2626" }}>{r.absent}</td>
+                                <td style={{ fontWeight: "bold", color: warning ? "#dc2626" : "#16a34a" }}>
                                     {toPercent(r.attendanceRate)}
                                 </td>
                                 <td>
