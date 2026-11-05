@@ -1,5 +1,7 @@
-import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, NavLink, Route, Routes } from "react-router-dom";
 import AppProvider from "./provider/AppProvider";
+import ListPage from "./components/pages/ListPage";
+import DetailPage from "./components/pages/DetailPage";
 // Import trang khi tạo xong, ví dụ:
 // import ListPage from "./pages/ListPage";
 // import DetailPage from "./pages/DetailPage";
@@ -10,7 +12,7 @@ function App() {
         <AppProvider>
             <BrowserRouter>
                 {/* Nền cả trang */}
-                <div style={{ background: "#fffaf5", minHeight: "100vh" }}>
+                <div style={{ background: "#fff", minHeight: "100vh" }}>
                     {/* ===== ĐỔI THEO ĐỀ: tên app + các link trên header ===== */}
                     <nav style={{ display: "flex", alignItems: "center", gap: 24, padding: "12px 24px", background: "linear-gradient(90deg, #7c2d12, #c2410c)" }}>
                         <span style={{ color: "#fff", fontWeight: 700 }}>My App</span>
@@ -19,25 +21,25 @@ function App() {
                         </NavLink>
                     </nav>
 
-                    <main style={{ maxWidth: 1100, margin: "0 auto", padding: "24px 16px" }}>
+                    <main style={{ margin: "0 auto", padding: "24px 16px" }}>
                         {/* ===== ĐỔI THEO ĐỀ: copy-paste URL từ đề, KHÔNG tự gõ ===== */}
                         <Routes>
-                            <Route path="/" element={<h4>Base is running. Add your pages in src/pages.</h4>} />
 
-                            {/* ----- ROUTE MẪU (bỏ comment + đổi URL theo đề) -----
-                            "/" tự chuyển sang trang chính (nhớ import Navigate):
                             <Route path="/" element={<Navigate to="/classes" replace />} />
 
-                            Trang danh sách:
                             <Route path="/classes" element={<ListPage />} />
+                            <Route path="/classes/:classId/attendance-summary" element={<DetailPage />} />
+
+
+                            {/* Trang danh sách:
 
                             Trang chi tiết, lấy id bằng useParams():
                             <Route path="/classes/:id/attendance-summary" element={<DetailPage />} />
 
                             Thêm / sửa dùng chung 1 trang:
                             <Route path="/classes/new" element={<FormPage />} />
-                            <Route path="/classes/:id/edit" element={<FormPage />} />
-                            */}
+                            <Route path="/classes/:id/edit" element={<FormPage />} /> */}
+
 
                             <Route path="*" element={<h4>Page not found</h4>} />
                         </Routes>

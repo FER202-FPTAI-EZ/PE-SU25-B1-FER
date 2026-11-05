@@ -11,12 +11,15 @@ const AppProvider = ({ children }) => {
     // Ví dụ (bỏ comment + đổi tên bảng):
     // const [subjects, setSubjects] = useState([]);
     // const [students, setStudents] = useState([]);
-    const [items, setItems] = useState([]); // xóa dòng này khi đã có bảng thật
+    const [subjects, setSubjects] = useState([]); // xóa dòng này khi đã có bảng thật
+    const [classes, setClasses] = useState([]); // xóa dòng này khi đã có bảng thật
+    const [students, setStudents] = useState([]); // xóa dòng này khi đã có bảng thật
 
     // Gọi lại sau khi thêm / sửa / xóa ở các bảng này
     const reload = () => {
-        // instance.get("/subjects").then((res) => setSubjects(res.data));
-        // instance.get("/students").then((res) => setStudents(res.data));
+        instance.get("/subjects").then((res) => setSubjects(res.data));
+        instance.get("/classes").then((res) => setClasses(res.data));
+        instance.get("/students").then((res) => setStudents(res.data));
     };
 
     useEffect(() => {
@@ -24,10 +27,10 @@ const AppProvider = ({ children }) => {
     }, []);
 
     // Nhớ thêm tên bảng vào value để trang khác lấy được:
-    // value={{ subjects, students, reload }}
-    // Trang dùng: const { subjects, reload } = useAppContext();
+    // value={{ subjects, classes, reload }}
+    // Trang dùng: const { subjects, classes, reload } = useAppContext();
     return (
-        <AppContext.Provider value={{ items, setItems, reload }}>
+        <AppContext.Provider value={{ subjects, classes, students, reload }}>
             {children}
         </AppContext.Provider>
     );
