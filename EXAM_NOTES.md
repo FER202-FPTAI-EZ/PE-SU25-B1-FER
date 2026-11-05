@@ -20,24 +20,76 @@ API: http://localhost:9999 · App: http://localhost:3000
 ## 3. 10 phút đầu giờ thi
 1. Chép `database.json` của đề vào thư mục, chạy 2 terminal.
 2. Mở `http://localhost:9999/<tên bảng>` để xem tên các field.
-3. `src/provider/AppProvider.jsx`: đổi `subjects`, `students` thành các bảng tra cứu của đề (bảng chỉ để lấy tên).
-4. `src/App.js`: sửa tên app, link header, **URL các route**.
-5. Mỗi câu hỏi: mở trang mẫu gần giống nhất → sửa tên bảng, tên field (tìm chữ `classes`, `subjects`...) → sửa cột bảng.
-6. Xóa các khối `TÙY CHỌN` đề không hỏi (nút Add/Edit/Delete, ô tìm kiếm...).
-7. So từng Figure trong đề.
+3. `src/provider/AppProvider.jsx`: bỏ comment, đổi thành các bảng tra cứu của đề (bảng chỉ để lấy tên).
+4. `src/App.js`: sửa tên app, link header, bỏ comment **route mẫu** và copy-paste URL từ đề.
+5. Mỗi câu hỏi: tạo 1 file trong `src/pages/` từ **khung trang** bên dưới.
+6. So từng Figure trong đề.
 
 ## 4. Các file
 | File | Dùng cho |
 |---|---|
-| `src/App.js` | Header + tất cả route. Thêm trang = thêm 1 `<Route>` |
-| `src/provider/AppProvider.jsx` | Bảng tra cứu dùng chung + `reload()` |
+| `src/App.js` | Header + route mẫu. Thêm trang = import + thêm 1 `<Route>` |
+| `src/provider/AppProvider.jsx` | Mẫu bảng tra cứu dùng chung + `reload()` |
 | `src/utils/helpers.js` | `findById`, `getField`, `countWhere`, `sum`, `average`, `toPercent`, `toMoney`, `toDate`, `nextSort`, `sortIcon`, `sortByField` |
-| `src/pages/ListPage.jsx` | Danh sách: dropdown, radio trên URL, tìm kiếm, badge, chuyển trang, xóa |
-| `src/pages/DetailPage.jsx` | Chi tiết: `useParams`, thẻ thống kê, sort 3 trạng thái, checkbox lọc |
-| `src/pages/FormPage.jsx` | Thêm / sửa chung 1 file, kiểm tra dữ liệu, POST / PUT |
-| `examples/paper-1/` | Lời giải đầy đủ paper-1 để tham khảo |
+| `src/lib/axios.js` | `instance` với baseURL `http://localhost:9999/` |
 
 Mọi trang theo cùng thứ tự: **1 data → 2 state → 3 helper → 4 lọc/sort → 5 render**.
+
+**Khung trang** (tạo `src/pages/ListPage.jsx` rồi điền vào):
+```jsx
+import { useEffect, useState } from "react";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { Badge, Button, Form, Table } from "react-bootstrap";
+import { instance } from "../lib/axios";
+import { useAppContext } from "../provider/AppProvider";
+import { countWhere, getField, toPercent } from "../utils/helpers";
+
+const ListPage = () => {
+    const navigate = useNavigate();
+
+    // 1. DATA
+    const [items, setItems] = useState([]);
+    useEffect(() => {
+        instance.get("/classes").then((res) => setItems(res.data));
+    }, []);
+
+    // 2. STATE (bộ lọc, sort, checkbox...)
+    const [keyword, setKeyword] = useState("");
+
+    // 3. HELPER
+
+    // 4. LỌC / SORT
+    const rows = items.filter((item) => item.className.includes(keyword));
+
+    // 5. RENDER
+    return (
+        <div>
+            <h3 style={{ color: "#7c2d12", fontWeight: 700 }}>Title</h3>
+            <Table hover style={{ verticalAlign: "middle" }}>
+                <thead>
+                    <tr style={{ "--bs-table-bg": "#7c2d12", "--bs-table-color": "#fff" }}>
+                        {["No", "Name", "Action"].map((h) => <th key={h}>{h}</th>)}
+                    </tr>
+                </thead>
+                <tbody>
+                    {rows.map((item, index) => (
+                        <tr key={item.id}>
+                            <td>{index + 1}</td>
+                            <td>{item.className}</td>
+                            <td>
+                                <Button size="sm" onClick={() => navigate(`/classes/${item.id}`)}>View</Button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
+        </div>
+    );
+};
+
+export default ListPage;
+```
+Xóa các import không dùng tới để hết cảnh báo.
 
 ## 5. Code mẫu copy-paste
 
